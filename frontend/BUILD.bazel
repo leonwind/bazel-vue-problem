@@ -1,0 +1,44 @@
+load("@npm//@vue/cli-service:index.bzl", "vue_cli_service")
+
+
+vue_cli_service(
+    name = "serve",
+    args = [
+        "serve",
+        "--skip-plugins",
+        "eslint",
+    ],
+    data = [
+        ":babel.config.js",
+        ":package.json",
+		"//frontend/src:frontend-src",
+        "@npm//:node_modules",
+        "@npm//@vue/cli-plugin-babel",
+        "@npm//@vue/cli-plugin-eslint",
+        "@npm//vue",
+    ],
+    chdir = package_name(),
+)
+
+
+vue_cli_service(
+    name = "build",
+    outs = ["dist"],
+    args = [
+        "build",
+        "--dest",
+        "../$(@D)/dist",
+        "--skip-plugins",
+        "eslint",
+    ],
+    data = [
+        ":babel.config.js",
+        ":package.json",
+		"//frontend/src:frontend-src",
+        "@npm//:node_modules",
+        "@npm//@vue/cli-plugin-babel",
+        "@npm//@vue/cli-plugin-eslint",
+        "@npm//vue",
+    ],
+	chdir = package_name(),
+)
