@@ -1,7 +1,7 @@
 # Bazel Vue.js problem
 
 Minimal example of bazel not being able to serve vue.js. 
-See [#1776](https://github.com/bazelbuild/rules_nodejs/issues/3104) for reference.
+See [#3104](https://github.com/bazelbuild/rules_nodejs/issues/3104) for reference.
 
 ## How to reproduce
 Working: `bazel build frontend:build` 

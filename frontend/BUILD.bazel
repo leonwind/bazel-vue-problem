@@ -40,5 +40,5 @@ vue_cli_service(
         "@npm//@vue/cli-plugin-eslint",
         "@npm//vue",
     ],
-	chdir = package_name(),
+    chdir = package_name(),
 )
